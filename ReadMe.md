@@ -12,7 +12,7 @@ Codebase includes 3 Java Project in ./src folder. This project was built using E
 7. lucene.search
 
 ### Project Description
-1. .src/com/tutorialspoint/lucene: The code were imported from [TutorialsPoint](https://www.tutorialspoint.com/lucene/) 
+1. .src/com/tutorialspoint/lucene: The code was imported from [TutorialsPoint](https://www.tutorialspoint.com/lucene/) 
 
 2. .src/experimentalFramework: It has all the files which will be used for parsing Pubmed Dataset, generating CSV files out of indexed Pubmed dataset and generating artifical pubmed dataset. It can be used in following ways:
 - DocumentProperties.java: Defines a single block of document in a Pubmed Dataset and has following datatypes, along with getters and setters: 
@@ -74,7 +74,7 @@ dir.close();
 
 - CreateDummyDatasetMadeUpOfAlphabets.java: Creates Pubmed dataset using only alphabets as an input. Since length is used as an input with no of alphabets as an iterator for each position's permutation and combination, the amount of keywords are expotentially increased, where the exponent has a base of 26.
 
-3. .src/PeilinLucene: The code were imported from another Forward Data Lab member's, [Peilin Rao](https://github.com/peilinrao/EverythingSearch-Experiment/tree/master/out/production/EverythingSearch-Experiment), Lucene codebase.
+3. .src/PeilinLucene: The code was imported from another Forward Data Lab member's, [Peilin Rao](https://github.com/peilinrao/EverythingSearch-Experiment/tree/master/out/production/EverythingSearch-Experiment), Lucene codebase.
 
 The following dataFiles are also included:
 1. Index Folder: Stores the indexed pubmed.sample
@@ -88,4 +88,4 @@ The following dataFiles are also included:
 ## Requirements to run the code
 JRE Environment
 
-## Contributor: [Yash Saboo](https://github.com/yashsaboo) as a Member of [FORWARD Data Lab](http://www.forwarddatalab.org/)
+### Contributor: [Yash Saboo](https://github.com/yashsaboo) as a Member of [FORWARD Data Lab](http://www.forwarddatalab.org/)
