@@ -64,11 +64,11 @@ public class LuceneBuildIndex extends PubmedParser{
 	public FieldType setFiledTypeForMetadata()
 	{
 		FieldType fieldTypeMetadata = new FieldType();
-        fieldTypeMetadata.setOmitNorms( true );
-        fieldTypeMetadata.setIndexOptions( IndexOptions.DOCS );
-        fieldTypeMetadata.setStored( true );
-        fieldTypeMetadata.setTokenized( false );
-        fieldTypeMetadata.freeze();
+		fieldTypeMetadata.setOmitNorms( true );
+		fieldTypeMetadata.setIndexOptions( IndexOptions.DOCS );
+		fieldTypeMetadata.setStored( true );
+		fieldTypeMetadata.setTokenized( false );
+		fieldTypeMetadata.freeze();
         
 		return fieldTypeMetadata;
 	}
@@ -77,12 +77,12 @@ public class LuceneBuildIndex extends PubmedParser{
 	public FieldType setFiledTypeForNormalTextField()
 	{
 		FieldType fieldTypeText = new FieldType();
-        fieldTypeText.setIndexOptions( IndexOptions.DOCS_AND_FREQS_AND_POSITIONS );
-        fieldTypeText.setStoreTermVectors( true );
-        fieldTypeText.setStoreTermVectorPositions( true );
-        fieldTypeText.setTokenized( true );
-        fieldTypeText.setStored( true );
-        fieldTypeText.freeze();
+		fieldTypeText.setIndexOptions( IndexOptions.DOCS_AND_FREQS_AND_POSITIONS );
+		fieldTypeText.setStoreTermVectors( true );
+		fieldTypeText.setStoreTermVectorPositions( true );
+		fieldTypeText.setTokenized( true );
+		fieldTypeText.setStored( true );
+		fieldTypeText.freeze();
         
 		return fieldTypeText;
 	}
@@ -102,8 +102,8 @@ public class LuceneBuildIndex extends PubmedParser{
 	//Iteratively read each document block from the corpus file, create a Document object for the parsed document, and add that Document object by calling addDocument().
 	public void addDocuments(PubmedParser objPubmedParser, IndexWriter ixwriter) throws IOException
 	{
-        FieldType fieldTypeMetadata = setFiledTypeForMetadata(); //This is the field setting for metadata field.
-        FieldType fieldTypeText = setFiledTypeForNormalTextField(); //This is the field setting for normal text field.
+		FieldType fieldTypeMetadata = setFiledTypeForMetadata(); //This is the field setting for metadata field.
+		FieldType fieldTypeText = setFiledTypeForNormalTextField(); //This is the field setting for normal text field.
         
 		DocumentProperties dp;
 		if(objPubmedParser.filePath==null)
@@ -130,21 +130,21 @@ public class LuceneBuildIndex extends PubmedParser{
 	{
 		try {
 
-            Directory dir = FSDirectory.open( new File( pathIndex ).toPath() );
-           
-            IndexWriter ixwriter = new IndexWriter( dir, getIndexWriterConfig() );
+		    Directory dir = FSDirectory.open( new File( pathIndex ).toPath() );
 
-            // Add documents
-            PubmedParser objPubmedParser = new PubmedParser("src/artificialPubmed.sample");
-            addDocuments(objPubmedParser, ixwriter);
+		    IndexWriter ixwriter = new IndexWriter( dir, getIndexWriterConfig() );
 
-            // remember to close both the index writer and the directory
-            ixwriter.close();
-            dir.close();
+		    // Add documents
+		    PubmedParser objPubmedParser = new PubmedParser("src/artificialPubmed.sample");
+		    addDocuments(objPubmedParser, ixwriter);
 
-        } catch ( Exception e ) {
-            e.printStackTrace();
-        }
+		    // remember to close both the index writer and the directory
+		    ixwriter.close();
+		    dir.close();
+
+		} catch ( Exception e ) {
+		    e.printStackTrace();
+		}
 	}
 
     public static void main( String[] args ) 
